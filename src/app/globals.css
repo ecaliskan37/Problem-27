@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+  --animate-wiggle: wiggle 0.5s ease-in-out infinite;
+  @keyframes wiggle {
+    0% {
+      transform: rotate(-5deg);
+    }
+    50% {
+      transform: rotate(5deg);
+    }
+    100% {
+      transform: rotate(-5deg);
+    }
+  }
+}
+[data-theme='dark'] {
+  background-color: black;
+}
+
+[data-theme='light'] {
+  background-image: linear-gradient(to bottom right, red, yellow);
+}
+
+:root {
+  background-color: white;
+}
